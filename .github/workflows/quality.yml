@@ -1,0 +1,46 @@
+name: Quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  static-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check required files
+        run: |
+          test -f index.html
+          test -f styles.css
+          test -f data.js
+          test -f app.js
+
+      - name: Check JavaScript syntax
+        run: |
+          node --check data.js
+          node --check app.js
+
+      - name: Verify diagnostic dataset markers
+        run: |
+          grep -q 'window.DIAG_DATA' data.js
+          grep -q 'objectiveCount' data.js
+          grep -q 'performanceCount' data.js
+          grep -q 'English Map' index.html
+
+      - name: Static HTTP smoke test
+        run: |
+          python3 -m http.server 4173 >/tmp/english-map-http.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID' EXIT
+          sleep 1
+          curl --fail --silent http://127.0.0.1:4173/ | grep -q 'English Map'
+          curl --fail --silent http://127.0.0.1:4173/app.js >/dev/null
+          curl --fail --silent http://127.0.0.1:4173/data.js >/dev/null
+          curl --fail --silent http://127.0.0.1:4173/styles.css >/dev/null
