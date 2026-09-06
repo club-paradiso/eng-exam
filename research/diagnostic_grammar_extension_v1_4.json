@@ -1,0 +1,24 @@
+{
+  "version": "1.4-grammar-coverage-extension",
+  "purpose": "Fill diagnostic coverage gaps and ensure at least two knowledge evidence units for each mapped 혼공 Part.",
+  "items": [
+    {"id":"G09","part":1,"skill":"noun_plural","format":"mcq","prompt":"There are three ____ on the table.","choices":["box","boxs","boxes","boxies"],"answer":2,"kr2022_role":"supporting_language_form","cefr":"linguistic_competence A1-A2"},
+    {"id":"G10","part":1,"skill":"article_basic","format":"mcq","prompt":"I have ____ orange in my bag.","choices":["a","an","the","some"],"answer":1,"kr2022_role":"supporting_language_form","cefr":"linguistic_competence A1-A2"},
+    {"id":"G11","part":2,"skill":"subject_object_pronoun","format":"mcq","prompt":"Mina is my friend. I play tennis with ____. ","choices":["she","her","hers","herself"],"answer":1,"kr2022_role":"supporting_language_form","cefr":"linguistic_competence A1-A2"},
+    {"id":"G12","part":2,"skill":"possessive_determiner","format":"mcq","prompt":"Tom has a dog. ____ dog is very small.","choices":["He","Him","His","He's"],"answer":2,"kr2022_role":"supporting_language_form","cefr":"linguistic_competence A1-A2"},
+    {"id":"G13","part":5,"skill":"modal_can","format":"mcq","prompt":"My little sister ____ swim very well.","choices":["can","cans","is can","can to"],"answer":0,"kr2022_role":"supporting_language_form","cefr":"linguistic_competence A1-A2"},
+    {"id":"G14","part":5,"skill":"modal_obligation","format":"mcq","prompt":"You ____ be quiet in the library.","choices":["must","musts","are must","must to"],"answer":0,"kr2022_role":"supporting_language_form","cefr":"linguistic_competence A1-A2"},
+    {"id":"G15","part":6,"skill":"adjective_adverb_choice","format":"mcq","prompt":"Jina is a ____ runner.","choices":["quick","quickly","quickerly","quickness"],"answer":0,"kr2022_role":"supporting_language_form","cefr":"linguistic_competence A1-A2"},
+    {"id":"G16","part":6,"skill":"adverb_manner","format":"mcq","prompt":"Jina runs ____. ","choices":["quick","quickly","quickness","quicked"],"answer":1,"kr2022_role":"supporting_language_form","cefr":"linguistic_competence A1-A2"},
+    {"id":"G17","part":3,"skill":"be_verb_negation","format":"mcq","prompt":"They ____ at school today.","choices":["isn't","aren't","don't","doesn't"],"answer":1,"kr2022_role":"supporting_language_form","cefr":"linguistic_competence A1-A2"},
+    {"id":"G18","part":3,"skill":"be_verb_question","format":"mcq","prompt":"Choose the correct question.","choices":["Is he tired?","Does he tired?","He is tired?","Are he tired?"],"answer":0,"kr2022_role":"supporting_language_form","cefr":"linguistic_competence A1-A2"}
+  ],
+  "scoring_policy": {
+    "part_evidence": "Do not mark a Part secure from one item. Use at least 2 independent evidence units per Part before skip/review recommendation.",
+    "recommendation_thresholds": {
+      "secure": "both items correct + no contradiction in speaking/writing",
+      "developing": "1/2 correct or productive contradiction",
+      "needs_review": "0/2 correct"
+    }
+  }
+}
