@@ -21,11 +21,16 @@ jobs:
           test -f styles.css
           test -f data.js
           test -f app.js
+          test -f scripts/validate-data.mjs
 
       - name: Check JavaScript syntax
         run: |
           node --check data.js
           node --check app.js
+          node --check scripts/validate-data.mjs
+
+      - name: Validate diagnostic dataset
+        run: node scripts/validate-data.mjs
 
       - name: Verify diagnostic dataset markers
         run: |
