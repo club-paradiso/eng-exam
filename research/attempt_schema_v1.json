@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "english-map-attempt.v1",
+  "purpose": "Stable payload contract for storing and calibrating diagnostic attempts.",
+  "attempt": {
+    "attemptId": "uuid/string",
+    "engineVersion": "string|null",
+    "student": {
+      "name": "string",
+      "grade": "string"
+    },
+    "startedAt": "ISO-8601|null",
+    "completedAt": "ISO-8601|null",
+    "durationMs": "integer|null",
+    "branches": {
+      "foundation": "boolean",
+      "ceiling": "boolean"
+    },
+    "responses": [
+      {
+        "itemId": "string",
+        "section": "string",
+        "skill": "string|null",
+        "cefr": "string|null",
+        "kr2022": ["string"],
+        "answer": "string|number",
+        "correct": "boolean|null",
+        "responseTimeMs": "integer",
+        "answerChanges": "integer",
+        "replayCount": "integer",
+        "firstSeenAt": "ISO-8601|null"
+      }
+    ],
+    "performance": [
+      {
+        "taskId": "string",
+        "section": "speaking|writing",
+        "cefr": "string|null",
+        "kr2022": ["string"],
+        "rubrics": "object<string,0|1|2|3>",
+        "response": "string",
+        "responseTimeMs": "integer",
+        "firstSeenAt": "ISO-8601|null"
+      }
+    ],
+    "client": {
+      "language": "string|null",
+      "timezoneOffsetMinutes": "integer",
+      "viewport": {
+        "width": "integer",
+        "height": "integer"
+      }
+    }
+  },
+  "privacy": {
+    "note": "Student name should be treated as optional display data. For multi-student production use, prefer an internal learner ID or alias and minimize directly identifying information.",
+    "raw_audio": "not_collected",
+    "microphone_recording": "not_collected"
+  }
+}
