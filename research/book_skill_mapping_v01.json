@@ -1,0 +1,110 @@
+{
+  "version":"0.1",
+  "scope":"STEP 7 - grammar/reading/writing book mapping for Grade 5 diagnostic tutor system",
+  "assumption":{
+    "current_grammar_book":"혼공 초등영문법 8품사편 (2024 개정판 기준)",
+    "compatibility_note":"2020판과 2024판의 27-Day Part 구조가 동일해 Part 단위 매핑은 공통 사용 가능",
+    "day_level_mapping_policy":"공개 목차가 '(1)(2)(3)' 수준인 Day는 세부 문법을 추정하지 않고 Part 단위로만 매핑"
+  },
+  "books":[
+    {
+      "book_id":"HONGONG_GRAMMAR_POS_2024",
+      "title":"혼공 초등영문법 8품사편",
+      "publisher":"혼공북스",
+      "edition":"2024 개정판",
+      "role":"explicit_grammar_knowledge",
+      "parts":[
+        {"part":1,"days":[1,2,3],"label":"명사","skill_tags":["noun_form","number","noun_usage"],"mapping_confidence":"PART_HIGH_DAY_LOW"},
+        {"part":2,"days":[4,5,6,7],"label":"대명사","skill_tags":["pronoun_reference","pronoun_form","pronoun_usage"],"mapping_confidence":"PART_HIGH_DAY_LOW"},
+        {"part":3,"days":[8,9,10,11],"label":"be동사","skill_tags":["be_verb","be_agreement","be_negation","be_question"],"mapping_confidence":"PART_HIGH_DAY_LOW"},
+        {"part":4,"days":[12,13,14,15,16],"label":"일반동사","skill_tags":["lexical_verb","third_person_singular","verb_negation","verb_question","tense_basic"],"mapping_confidence":"PART_HIGH_DAY_LOW"},
+        {"part":5,"days":[17,18,19],"label":"조동사","skill_tags":["modal_can","modal_obligation","modal_basic"],"mapping_confidence":"PART_HIGH_DAY_LOW"},
+        {"part":6,"days":[20,21,22,23],"label":"형용사/부사","skill_tags":["adjective","adverb","modifier_choice"],"mapping_confidence":"PART_HIGH_DAY_LOW"},
+        {"part":7,"days":[24,25,26,27],"label":"전치사/접속사/감탄사","skill_tags":["preposition_time","preposition_place","connector","interjection"],"mapping_confidence":"PART_HIGH_DAY_LOW"}
+      ],
+      "diagnostic_mapping":{
+        "G01":{"part":3,"skill":"be_verb_agreement","confidence":"HIGH"},
+        "G02":{"part":4,"skill":"third_person_singular","confidence":"HIGH"},
+        "G03":{"part":4,"skill":"simple_past","confidence":"MEDIUM","note":"공개 목차에서 특정 Day는 확인 불가"},
+        "G04":{"part":4,"skill":"verb_negation","confidence":"HIGH"},
+        "G05":{"part":4,"skill":"question_formation","confidence":"HIGH"},
+        "G06":{"part":7,"skill":"preposition_time","confidence":"HIGH"},
+        "G07":{"part":7,"skill":"connector_because","confidence":"HIGH"},
+        "G08":{"part":null,"skill":"future_expression_be_going_to","confidence":"UNMAPPED","note":"공개 8품사편 목차만으로 정확한 수록 위치를 확인할 수 없어 별도 보충 모듈로 처리"}
+      }
+    },
+    {
+      "book_id":"HONGONG_SYNTAX_2024",
+      "title":"혼공 초등영문법 기초구문편",
+      "publisher":"혼공북스",
+      "edition":"2024 개정판",
+      "role":"sentence_structure_and_productive_control",
+      "recommend_when":["grammar_knowledge >= 70 and productive_grammar_control < 65","sentence_formation < 65","writing shows correct vocabulary but unstable word order"]
+    },
+    {
+      "book_id":"HONGONG_WRITING_2024",
+      "title":"혼공 초등영문법 쓰기편",
+      "publisher":"혼공북스",
+      "edition":"2024 개정판",
+      "role":"controlled_to_guided_writing",
+      "recommend_when":["written_production <= A1 developing","grammar_knowledge > writing_grammar_control by >= 15 points","sentence_formation < 70"]
+    },
+    {
+      "book_id":"BRICKS_READING_100_NF_L1",
+      "title":"Bricks Reading 100 Nonfiction Level 1",
+      "publisher":"Bricks",
+      "role":"reading_foundation_to_A1",
+      "published_level":{"target_grade":"G2-G4","cefr":"A1"},
+      "recommend_when":["reading A1 not secure","main_idea/detail weak but decoding basically secure","student needs short nonfiction + workbook + e-book"]
+    },
+    {
+      "book_id":"BRICKS_READING_100_NF_L2",
+      "title":"Bricks Reading 100 Nonfiction Level 2",
+      "publisher":"Bricks",
+      "role":"reading_A1_plus",
+      "published_level":{"target_grade":"G2-G4","cefr":"A1+"},
+      "recommend_when":["reading A1 secure and A2 emerging","detail >= 65 and inference < 70"]
+    },
+    {
+      "book_id":"BRICKS_READING_100_NF_L3",
+      "title":"Bricks Reading 100 Nonfiction Level 3",
+      "publisher":"Bricks",
+      "role":"reading_A1_plus_upper",
+      "published_level":{"target_grade":"G2-G4","cefr":"A1+"},
+      "recommend_when":["reading A1 secure and A2 developing","student benefits from nonfiction before middle-school bridge"]
+    },
+    {
+      "book_id":"READING_INSIDE_STARTER_2022",
+      "title":"Reading Inside Starter (2022 개정)",
+      "publisher":"NE능률",
+      "role":"middle_school_bridge_reading",
+      "published_level":{"target":"중1"},
+      "recommend_when":["E56 reading >= 85","CEFR reading A2 secure or strong evidence","middle-school ceiling probe positive"],
+      "avoid_when":["A1 reading not secure","vocabulary recall or decoding major gap"]
+    },
+    {
+      "book_id":"BAPPA_5_SENTENCES_WRITING_1",
+      "title":"바빠 초등 하루 5문장 영어 글쓰기 1",
+      "publisher":"이지스에듀",
+      "role":"pattern_based_guided_writing",
+      "recommend_when":["student can form single sentences but struggles to connect 3-5 sentences","free writing causes task avoidance","needs pattern substitution before freer writing"]
+    },
+    {
+      "book_id":"BAPPA_5_SENTENCES_WRITING_2",
+      "title":"바빠 초등 하루 5문장 영어 글쓰기 2",
+      "publisher":"이지스에듀",
+      "role":"guided_paragraph_bridge",
+      "recommend_when":["volume 1 level is secure","written production A1 secure and A2 emerging"]
+    }
+  ],
+  "recommendation_rules":[
+    {"rule_id":"GRAMMAR_FOUNDATION","if":"grammar_knowledge < 60","primary":"HONGONG_GRAMMAR_POS_2024","action":"weak Parts only; do not automatically restart book from Day 1"},
+    {"rule_id":"KNOWLEDGE_PRODUCTION_GAP","if":"grammar_knowledge >= 70 AND productive_grammar_control < 65","primary":"HONGONG_SYNTAX_2024","secondary":"HONGONG_WRITING_2024","action":"reduce repetitive recognition questions; increase sentence generation"},
+    {"rule_id":"GRAMMAR_SECURE","if":"grammar_knowledge >= 80 AND productive_grammar_control >= 75","primary":null,"action":"grammar book becomes review-only; shift lesson time to reading/writing/interaction"},
+    {"rule_id":"READING_LOW","if":"reading A1 != secure","primary":"BRICKS_READING_100_NF_L1"},
+    {"rule_id":"READING_MID","if":"reading A1 secure AND A2 emerging/developing","primary":"BRICKS_READING_100_NF_L2","secondary":"BRICKS_READING_100_NF_L3"},
+    {"rule_id":"READING_HIGH","if":"E56_reading >= 85 AND reading_A2 == secure AND ceiling_positive","primary":"READING_INSIDE_STARTER_2022"},
+    {"rule_id":"WRITING_LOW","if":"sentence_formation < 65 OR written_production <= A1 developing","primary":"HONGONG_WRITING_2024","secondary":"BAPPA_5_SENTENCES_WRITING_1"},
+    {"rule_id":"WRITING_BRIDGE","if":"single_sentence >= 75 AND connected_writing < 70","primary":"BAPPA_5_SENTENCES_WRITING_1","secondary":"BAPPA_5_SENTENCES_WRITING_2"}
+  ]
+}
