@@ -21,12 +21,14 @@ jobs:
           test -f styles.css
           test -f data.js
           test -f app.js
+          test -f telemetry.js
           test -f scripts/validate-data.mjs
 
       - name: Check JavaScript syntax
         run: |
           node --check data.js
           node --check app.js
+          node --check telemetry.js
           node --check scripts/validate-data.mjs
 
       - name: Validate diagnostic dataset
@@ -37,6 +39,9 @@ jobs:
           grep -q 'window.DIAG_DATA' data.js
           grep -q 'objectiveCount' data.js
           grep -q 'performanceCount' data.js
+          grep -q 'english-map-attempt.v1' telemetry.js
+          grep -q 'responseTimeMs' telemetry.js
+          grep -q 'answerChanges' telemetry.js
           grep -q 'English Map' index.html
 
       - name: Static HTTP smoke test
@@ -48,4 +53,5 @@ jobs:
           curl --fail --silent http://127.0.0.1:4173/ | grep -q 'English Map'
           curl --fail --silent http://127.0.0.1:4173/app.js >/dev/null
           curl --fail --silent http://127.0.0.1:4173/data.js >/dev/null
+          curl --fail --silent http://127.0.0.1:4173/telemetry.js >/dev/null
           curl --fail --silent http://127.0.0.1:4173/styles.css >/dev/null
