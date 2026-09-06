@@ -2,6 +2,13 @@
 
 초등학교 5학년 영어 진단용 파일럿 웹앱입니다.
 
+## Production
+
+- Vercel: https://eng-exam-ashy.vercel.app
+- Alternate alias: https://eng-exam-club-paradiso.vercel.app
+- 현재 production deployment는 정상 `READY` 상태이며 루트/JS/CSS 응답과 Vercel runtime error를 점검했습니다.
+- 현재 Vercel 프로젝트의 Git link는 아직 연결되지 않아 GitHub `main` push가 자동 production deploy를 발생시키지는 않습니다.
+
 ## 실행
 
 - 가장 간단히 `index.html`을 브라우저에서 엽니다.
